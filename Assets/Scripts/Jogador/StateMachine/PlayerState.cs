@@ -19,4 +19,9 @@ public class PlayerState
     public virtual void FrameUpdate() { }
     public virtual void PhysicsUpdate() { }
     //public virtual void AnimationTriggerEvent() { }
+
+    public virtual float HandleInput()
+    {
+        return Input.GetAxisRaw("Horizontal");
+    }
 }

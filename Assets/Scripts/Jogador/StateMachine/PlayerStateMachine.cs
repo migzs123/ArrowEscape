@@ -17,5 +17,12 @@ public class PlayerStateMachine
         currState.Enter();
     }
 
+    public void FrameUpdate() {
+        currState.FrameUpdate();
+    }
 
+    public void PhysicsUpdate()
+    {
+        currState.PhysicsUpdate();
+    }
 }
