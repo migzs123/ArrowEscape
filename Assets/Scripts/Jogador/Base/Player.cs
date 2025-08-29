@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, IDamagable
 {
-   [field:SerializeField] public float maxHealth { get; set; }
-   [field: SerializeField] public float currHealth { get; set; }
+    #region Health Variables
+    [field:SerializeField] public float maxHealth { get; set; }
+    [field: SerializeField] public float currHealth { get; set; }
+
+    #endregion
+
+    #region State Machine Variables
+    private PlayerStateMachine stateMachine { get; set; }
+
+    #endregion
+
+    void Awake()
+    {
+        stateMachine = new PlayerStateMachine();
+    }
 
     void Start()
     {
