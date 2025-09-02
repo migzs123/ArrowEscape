@@ -7,10 +7,6 @@ public class FallState : PlayerState
     public FallState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
-    public override void Enter()
-    {
-        player.animator.SetBool("Moving", true);
-    }
 
     public override void FrameUpdate()
     {
@@ -30,7 +26,10 @@ public class FallState : PlayerState
 
     public override void PhysicsUpdate()
     {
-        this.FlipPlayer();
+        if (this.HandleInput() != 0)
+        {
+            this.FlipPlayer();
+        }
         float maxSpeed = player.moveSpeed;
         float targetX = HandleInput() * maxSpeed;
         float newVelX = Mathf.Lerp(player.rb.velocity.x, targetX, Time.fixedDeltaTime * 10f);
@@ -46,6 +45,6 @@ public class FallState : PlayerState
 
     public override void Exit()
     {
-        player.animator.SetBool("Moving", false);
+        player.animator.SetBool("Jumping", false);
     }
 }

@@ -22,6 +22,12 @@ public class MoveState : PlayerState
             return;
         }
 
+        if (player.isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            stateMachine.ChangeState(player.jumpState);
+            return;
+        }
+
         if (HandleInput() == 0)
         {
             stateMachine.ChangeState(player.idleState);

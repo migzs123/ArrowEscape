@@ -22,6 +22,12 @@ public class IdleState : PlayerState
             return;
         }
 
+        if (player.isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            stateMachine.ChangeState(player.jumpState);
+            return;
+        }
+
         // Se tem input horizontal → Move
         if (HandleInput() != 0)
         {

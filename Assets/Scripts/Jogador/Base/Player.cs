@@ -15,6 +15,7 @@ public class Player : MonoBehaviour, IDamagable
     [HideInInspector] public IdleState idleState { get; set; }
     [HideInInspector] public MoveState moveState { get; set; }
     [HideInInspector] public FallState fallState { get; set; }
+    [HideInInspector] public JumpState jumpState { get; set; }
     [HideInInspector] public bool isGrounded=true;
 
     #endregion
@@ -26,6 +27,10 @@ public class Player : MonoBehaviour, IDamagable
 
     #region MoveState Variables
     [field: SerializeField] public float moveSpeed { get; set; }
+    #endregion
+
+    #region JumpState Variables
+    [field: SerializeField] public float jumpPower { get; set; }
     #endregion
 
     #region FallState Variables
@@ -40,6 +45,7 @@ public class Player : MonoBehaviour, IDamagable
         idleState = new IdleState(this, stateMachine);
         moveState = new MoveState(this, stateMachine);
         fallState = new FallState(this, stateMachine);
+        jumpState = new JumpState(this, stateMachine);
 
         animator = GetComponent<Animator>();
     }
