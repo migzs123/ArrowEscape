@@ -9,15 +9,22 @@ public class FallState : PlayerState
     }
     public override void Enter()
     {
-        player.animator.SetBool("Falling", true);
+        player.animator.SetBool("Moving", true);
     }
 
     public override void FrameUpdate()
     {
         if (player.isGrounded)
         {
-            stateMachine.ChangeState(player.landState);
-            return;
+            if (HandleInput().Equals(0))
+            {
+                stateMachine.ChangeState(player.idleState);
+                return;
+            }
+            else {
+                stateMachine.ChangeState(player.moveState);
+                return;
+            }                
         }
     }
 
@@ -39,6 +46,6 @@ public class FallState : PlayerState
 
     public override void Exit()
     {
-        player.animator.SetBool("Falling", false);
+        player.animator.SetBool("Moving", false);
     }
 }

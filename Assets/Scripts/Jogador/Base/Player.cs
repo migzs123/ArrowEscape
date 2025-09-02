@@ -15,7 +15,6 @@ public class Player : MonoBehaviour, IDamagable
     [HideInInspector] public IdleState idleState { get; set; }
     [HideInInspector] public MoveState moveState { get; set; }
     [HideInInspector] public FallState fallState { get; set; }
-    [HideInInspector] public LandState landState { get; set; }
     [HideInInspector] public bool isGrounded=true;
 
     #endregion
@@ -41,7 +40,6 @@ public class Player : MonoBehaviour, IDamagable
         idleState = new IdleState(this, stateMachine);
         moveState = new MoveState(this, stateMachine);
         fallState = new FallState(this, stateMachine);
-        landState = new LandState(this, stateMachine);
 
         animator = GetComponent<Animator>();
     }
