@@ -18,6 +18,6 @@ public class PlayerGroundCollider : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        player.isGrounded = true;
+        player.isGrounded = false;
     }
 }

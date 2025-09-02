@@ -14,6 +14,8 @@ public class Player : MonoBehaviour, IDamagable
     private PlayerStateMachine stateMachine { get; set; }
     [HideInInspector] public IdleState idleState { get; set; }
     [HideInInspector] public MoveState moveState { get; set; }
+    [HideInInspector] public FallState fallState { get; set; }
+    [HideInInspector] public LandState landState { get; set; }
     [HideInInspector] public bool isGrounded=true;
 
     #endregion
@@ -27,6 +29,10 @@ public class Player : MonoBehaviour, IDamagable
     [field: SerializeField] public float moveSpeed { get; set; }
     #endregion
 
+    #region FallState Variables
+    [field: SerializeField] public float fallMult { get; set; }
+    #endregion
+
     void Awake()
     {
         stateMachine = new PlayerStateMachine();
@@ -34,6 +40,8 @@ public class Player : MonoBehaviour, IDamagable
         rb = GetComponent<Rigidbody2D>();
         idleState = new IdleState(this, stateMachine);
         moveState = new MoveState(this, stateMachine);
+        fallState = new FallState(this, stateMachine);
+        landState = new LandState(this, stateMachine);
 
         animator = GetComponent<Animator>();
     }
@@ -66,6 +74,7 @@ public class Player : MonoBehaviour, IDamagable
     private void Update()
     {
         stateMachine.FrameUpdate();
+        Debug.Log(isGrounded);
     }
 
     private void FixedUpdate()

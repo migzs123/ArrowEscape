@@ -16,6 +16,12 @@ public class MoveState : PlayerState
 
     public override void FrameUpdate()
     {
+        if (!player.isGrounded)
+        {
+            stateMachine.ChangeState(player.fallState);
+            return;
+        }
+
         if (HandleInput() == 0)
         {
             stateMachine.ChangeState(player.idleState);
@@ -26,8 +32,8 @@ public class MoveState : PlayerState
 
     public override void PhysicsUpdate()
     {
+        this.FlipPlayer();
         float moveInput = HandleInput();
         player.rb.velocity = new Vector2(player.moveSpeed * moveInput,player.rb.velocity.y);
-        player.transform.localScale = new Vector2(moveInput > 0 ? Mathf.Abs(player.transform.localScale.x) : -Mathf.Abs(player.transform.localScale.x), player.transform.localScale.y);
     }
 }

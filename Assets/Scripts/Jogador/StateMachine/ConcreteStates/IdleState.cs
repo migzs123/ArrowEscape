@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
@@ -15,7 +15,15 @@ public class IdleState : PlayerState
 
     public override void FrameUpdate()
     {
-        if (!HandleInput().Equals(0) && player.isGrounded)
+        // Se perdeu o chão → Fall (mesmo se velocidade ainda não for negativa)
+        if (!player.isGrounded)
+        {
+            stateMachine.ChangeState(player.fallState);
+            return;
+        }
+
+        // Se tem input horizontal → Move
+        if (HandleInput() != 0)
         {
             stateMachine.ChangeState(player.moveState);
             return;

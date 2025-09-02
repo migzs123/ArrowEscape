@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AtiradorController : MonoBehaviour
 {
-    //Prefab para criar
     [SerializeField] private GameObject FlechaPrefab;
     //Intervalo entre as flehcasflehcas
     [SerializeField] private float Intervalo;

@@ -24,4 +24,9 @@ public class PlayerState
     {
         return Input.GetAxisRaw("Horizontal");
     }
+
+    public virtual void FlipPlayer()
+    {
+        player.transform.localScale = new Vector2(HandleInput() > 0 ? Mathf.Abs(player.transform.localScale.x) : -Mathf.Abs(player.transform.localScale.x), player.transform.localScale.y);
+    }
 }

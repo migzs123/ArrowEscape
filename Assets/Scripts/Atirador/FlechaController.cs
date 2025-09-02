@@ -11,7 +11,7 @@ public class FlechaController : MonoBehaviour
 
     private void Start()
     {
-        heart = GameObject.FindGameObjectWithTag("Player").GetComponent<HeartSystem>();
+        //heart = GameObject.FindGameObjectWithTag("Player").GetComponent<HeartSystem>();
     }
 
     void Update()
@@ -29,10 +29,8 @@ public class FlechaController : MonoBehaviour
         //Verifica se colidiu com o jogador
         if (collision.gameObject.tag == "Player")
         {
-            //Se sim, avisa o controlador do jogador que ele tomou dano
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().vida--;
-            heart.vida--;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().animator.SetTrigger("TakeDamage");
+            collision.gameObject.GetComponent<Player>().Damage(1);
+            Destroy(this);
         }
     }
 
