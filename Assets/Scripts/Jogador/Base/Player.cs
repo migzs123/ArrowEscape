@@ -57,6 +57,12 @@ public class Player : MonoBehaviour, IDamagable
     }
 
     #region Health/Die
+
+    public void OnDeathAnimationEnd()
+    {
+        Destroy(gameObject);
+    }
+
     public void Damage(int damage)
     {
         if(currHealth-damage <= 0)
@@ -70,7 +76,9 @@ public class Player : MonoBehaviour, IDamagable
 
     public void Die()
     {
-        Destroy(this);
+        animator.SetTrigger("Die");
+        rb.simulated = false;
+
     }
 
     #endregion

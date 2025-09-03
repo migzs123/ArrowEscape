@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8f72911db1538004c8460c00b6c24d3e
+guid: 9bcb9482ca62b4c4698130e29d6c1f65
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: die_0
+      name: 16-bit-spike-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 973da82d214e9524a9bd5da026e73287
-      internalID: -714110465
+      spriteID: 50d36aee3202de047a14d0d5af310397
+      internalID: 321714755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: die_1
+      name: 16-bit-spike-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc93272b8c630746ba7743298fea0d6
+      internalID: 1392926031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16-bit-spike-Sheet_2
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bbea138cbad4484b96d41151419eebe
-      internalID: -1454822073
+      spriteID: d0bce91f1577b1146a6c0aa11190a798
+      internalID: 1377351607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: die_2
+      name: 16-bit-spike-Sheet_3
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edbe149387d4a7a44a7f550e37cc51a2
-      internalID: 1876629225
+      spriteID: e2e4142a88c60454bb3b888309bdcc9f
+      internalID: 1227804105
       vertices: []
       indices: 
       edges: []
@@ -183,9 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      die_0: -714110465
-      die_1: -1454822073
-      die_2: 1876629225
+      16-bit-spike-Sheet_0: 321714755
+      16-bit-spike-Sheet_1: 1392926031
+      16-bit-spike-Sheet_2: 1377351607
+      16-bit-spike-Sheet_3: 1227804105
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

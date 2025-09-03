@@ -42,9 +42,4 @@ public class FallState : PlayerState
             player.rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1f) * Time.fixedDeltaTime;
         }
     }
-
-    public override void Exit()
-    {
-        player.animator.SetBool("Jumping", false);
-    }
 }

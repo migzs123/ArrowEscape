@@ -9,7 +9,7 @@ public class JumpState : PlayerState
     }
     public override void Enter()
     {
-        player.animator.SetBool("Jumping", true);
+        player.animator.SetTrigger("Jump");
         player.rb.velocity = new Vector2(player.rb.velocity.x, 0f); // Zera Y antes do impulso
         player.rb.AddForce(Vector2.up * player.jumpPower, ForceMode2D.Impulse);
     }

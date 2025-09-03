@@ -13,6 +13,10 @@ public class PlayerGroundCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Spikes"))
+        {
+            player.Die();
+        }
         player.isGrounded = true;
     }
 
