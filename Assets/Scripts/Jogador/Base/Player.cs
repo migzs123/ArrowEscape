@@ -72,13 +72,14 @@ public class Player : MonoBehaviour, IDamagable
             return;
         }
        currHealth-=damage;
+        Debug.Log(currHealth);
+       animator.SetTrigger("Damage");
     }
 
     public void Die()
     {
         animator.SetTrigger("Die");
         rb.simulated = false;
-
     }
 
     #endregion
@@ -86,7 +87,7 @@ public class Player : MonoBehaviour, IDamagable
     private void Update()
     {
         stateMachine.FrameUpdate();
-        Debug.Log(isGrounded);
+        //Debug.Log(isGrounded);
     }
 
     private void FixedUpdate()

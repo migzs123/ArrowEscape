@@ -7,6 +7,8 @@ TagManager:
   - Plataforma
   - Thropy
   - Spikes
+  - Arrow
+  - Confiner
   layers:
   - Default
   - TransparentFX
