@@ -8,6 +8,7 @@ public class Player : MonoBehaviour, IDamagable
     #region Health Variables
     [Header("Health Variables")]
     [field: SerializeField] public float maxHealth;
+    [field: SerializeField] public HeartUI hearts;
     [HideInInspector] public float currHealth { get; set; }
 
     #endregion
@@ -79,7 +80,8 @@ public class Player : MonoBehaviour, IDamagable
             return;
         }
        currHealth-=damage;
-       Debug.Log(currHealth);
+        //Debug.Log(currHealth);
+       hearts.UpdateHearts();
        animator.SetTrigger("Damage");
     }
 
@@ -87,6 +89,8 @@ public class Player : MonoBehaviour, IDamagable
     {
         animator.SetTrigger("Die");
         rb.simulated = false;
+        currHealth = 0;
+        hearts.UpdateHearts();
     }
 
     #endregion
