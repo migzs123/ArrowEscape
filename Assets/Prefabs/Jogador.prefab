@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7239034214941448943}
   - component: {fileID: 2219272965905042004}
-  - component: {fileID: 5583384043572706774}
+  - component: {fileID: 7514753552974163121}
+  - component: {fileID: 3675048743520779828}
   m_Layer: 0
   m_Name: GroundCollider
   m_TagString: Untagged
@@ -45,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff5f50a8e97389429b86f4d07b3fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &5583384043572706774
-CircleCollider2D:
+--- !u!70 &7514753552974163121
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -77,9 +78,21 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.9335615}
-  serializedVersion: 2
-  m_Radius: 0.17749678
+  m_Offset: {x: -0.01890127, y: -0.6978229}
+  m_Size: {x: 0.7646219, y: 0.7646219}
+  m_Direction: 0
+--- !u!114 &3675048743520779828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6084115187723919115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff5f50a8e97389429b86f4d07b3fc43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7567362353303261257
 GameObject:
   m_ObjectHideFlags: 0
