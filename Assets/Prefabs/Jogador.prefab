@@ -279,7 +279,8 @@ MonoBehaviour:
   isGrounded: 0
   <moveSpeed>k__BackingField: 10
   <jumpPower>k__BackingField: 10
-  <fallMult>k__BackingField: 1
+  <lowJumpMult>k__BackingField: 2
+  <fallMult>k__BackingField: 3
 --- !u!1 &7867828080397175689
 GameObject:
   m_ObjectHideFlags: 0

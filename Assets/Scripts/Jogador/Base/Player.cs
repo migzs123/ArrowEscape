@@ -31,6 +31,7 @@ public class Player : MonoBehaviour, IDamagable
 
     #region JumpState Variables
     [field: SerializeField] public float jumpPower { get; set; }
+    [field: SerializeField] public float lowJumpMult { get; set; }
     #endregion
 
     #region FallState Variables
