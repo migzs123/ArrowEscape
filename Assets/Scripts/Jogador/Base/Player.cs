@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IDamagable
 {
     #region Health Variables
-    [field:SerializeField] public float maxHealth { get; set; }
+    [Header("Health Variables")]
+    [field: SerializeField] public float maxHealth;
     [HideInInspector] public float currHealth { get; set; }
 
     #endregion
@@ -26,16 +28,19 @@ public class Player : MonoBehaviour, IDamagable
     #endregion
 
     #region MoveState Variables
-    [field: SerializeField] public float moveSpeed { get; set; }
+    [Header("Move State")]
+    [field: SerializeField] public float moveSpeed;
     #endregion
 
     #region JumpState Variables
-    [field: SerializeField] public float jumpPower { get; set; }
-    [field: SerializeField] public float lowJumpMult { get; set; }
+    [Header("Jump State")]
+    [field: SerializeField] public float jumpPower;
+    [field: SerializeField] public float lowJumpMult;
     #endregion
 
     #region FallState Variables
-    [field: SerializeField] public float fallMult { get; set; }
+    [Header("Fall State")]
+    [field: SerializeField] public float fallMult;
     #endregion
 
     void Awake()
@@ -61,7 +66,8 @@ public class Player : MonoBehaviour, IDamagable
 
     public void OnDeathAnimationEnd()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Damage(int damage)
@@ -73,7 +79,7 @@ public class Player : MonoBehaviour, IDamagable
             return;
         }
        currHealth-=damage;
-        Debug.Log(currHealth);
+       Debug.Log(currHealth);
        animator.SetTrigger("Damage");
     }
 

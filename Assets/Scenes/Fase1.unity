@@ -6929,6 +6929,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
+      propertyPath: fallMult
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
+      propertyPath: jumpPower
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
+      propertyPath: lowJumpMult
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
       propertyPath: <jumpPower>k__BackingField
       value: 15
       objectReference: {fileID: 0}

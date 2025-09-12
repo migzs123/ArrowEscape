@@ -8,7 +8,6 @@ public interface IDamagable
 
     void Die();
 
-    float maxHealth {  get; set; }
     float currHealth { get; set; }
 
 }
