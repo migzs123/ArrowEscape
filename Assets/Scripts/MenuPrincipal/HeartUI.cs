@@ -17,6 +17,7 @@ public class HeartUI : MonoBehaviour
     {
         playerScript = player.GetComponent<Player>();
         DrawHearts();
+        UpdateHearts();
     }
 
     public void DrawHearts()

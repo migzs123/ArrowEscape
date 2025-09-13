@@ -59,7 +59,20 @@ public class Player : MonoBehaviour, IDamagable
 
     void Start()
     {
-        currHealth = maxHealth;
+        if (GameManager.instance.playerHealth >= 0)
+        {
+            // vida persistente entre fases
+            currHealth = GameManager.instance.playerHealth;
+        }
+        else
+        {
+            currHealth = maxHealth;
+        }
+
+        // salva a vida no início da fase
+        GameManager.instance.playerHealthAtLevelStart = currHealth;
+        hearts.UpdateHearts();
+
         stateMachine.Start(idleState);
     }
 
@@ -90,7 +103,16 @@ public class Player : MonoBehaviour, IDamagable
         animator.SetTrigger("Die");
         rb.simulated = false;
         currHealth = 0;
+        currHealth = GameManager.instance.playerHealthAtLevelStart;
         hearts.UpdateHearts();
+    }
+
+    private void OnDestroy()
+    {
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.playerHealth = currHealth;
+        }
     }
 
     #endregion
