@@ -59,7 +59,7 @@ public class Player : MonoBehaviour, IDamagable
 
     void Start()
     {
-        if (GameManager.instance.playerHealth >= 0)
+        if (GameManager.instance !=null && GameManager.instance.playerHealth >= 0)
         {
             // vida persistente entre fases
             currHealth = GameManager.instance.playerHealth;
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour, IDamagable
         }
 
         // salva a vida no início da fase
-        GameManager.instance.playerHealthAtLevelStart = currHealth;
+       if(GameManager.instance != null) GameManager.instance.playerHealthAtLevelStart = currHealth;
         hearts.UpdateHearts();
 
         stateMachine.Start(idleState);
@@ -98,12 +98,24 @@ public class Player : MonoBehaviour, IDamagable
        animator.SetTrigger("Damage");
     }
 
+    public void Cure(int amount)
+    {
+        currHealth += amount;
+
+        if (currHealth > maxHealth)
+        {
+            currHealth = maxHealth;
+        }
+
+        hearts.UpdateHearts();
+    }
+
     public void Die()
     {
         animator.SetTrigger("Die");
         rb.simulated = false;
         currHealth = 0;
-        currHealth = GameManager.instance.playerHealthAtLevelStart;
+        if(GameManager.instance != null) currHealth = GameManager.instance.playerHealthAtLevelStart;
         hearts.UpdateHearts();
     }
 

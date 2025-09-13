@@ -24,5 +24,11 @@ public class PlayerDamageCollider : MonoBehaviour
             player.Damage(1);
             Destroy(collision.gameObject);
         }
+        if (collision.CompareTag("Potion"))
+        {
+            Debug.Log("Pegou");
+            player.Cure(2);
+            Destroy(collision.gameObject);
+        }
     }
 }

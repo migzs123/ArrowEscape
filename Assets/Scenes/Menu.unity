@@ -1049,6 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: -1
+  playerHealthAtLevelStart: -1
 --- !u!1 &1793252213
 GameObject:
   m_ObjectHideFlags: 0
