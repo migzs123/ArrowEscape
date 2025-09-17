@@ -19,13 +19,18 @@ public class Player : MonoBehaviour, IDamagable
     [HideInInspector] public MoveState moveState { get; set; }
     [HideInInspector] public FallState fallState { get; set; }
     [HideInInspector] public JumpState jumpState { get; set; }
-    [HideInInspector] public bool isGrounded=true;
+    [HideInInspector] public bool isGrounded= false;
 
     #endregion
 
     #region Player Components
     [HideInInspector] public Rigidbody2D rb { get; set; }
     [HideInInspector] public Animator animator { get; set; }
+    #endregion
+
+    #region IdleState Variables
+    [Header("Idle State")]
+    [field: SerializeField] public float deceleration;
     #endregion
 
     #region MoveState Variables
@@ -37,6 +42,10 @@ public class Player : MonoBehaviour, IDamagable
     [Header("Jump State")]
     [field: SerializeField] public float jumpPower;
     [field: SerializeField] public float lowJumpMult;
+    public float coyoteTime = 0.1f;
+    [HideInInspector] public float coyoteTimeCounter;
+    public float jumpBufferTime = 0.1f;
+    [HideInInspector] public float jumpBufferCounter;
     #endregion
 
     #region FallState Variables
@@ -131,8 +140,17 @@ public class Player : MonoBehaviour, IDamagable
 
     private void Update()
     {
+        if (isGrounded)
+            coyoteTimeCounter = coyoteTime;
+        else
+            coyoteTimeCounter -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            jumpBufferCounter = jumpBufferTime;
+        else
+            jumpBufferCounter -= Time.deltaTime;
+
         stateMachine.FrameUpdate();
-        //Debug.Log(isGrounded);
     }
 
     private void FixedUpdate()

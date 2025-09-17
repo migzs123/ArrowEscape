@@ -15,16 +15,17 @@ public class IdleState : PlayerState
 
     public override void FrameUpdate()
     {
-        // Se perdeu o chão → Fall (mesmo se velocidade ainda não for negativa)
         if (!player.isGrounded)
         {
             stateMachine.ChangeState(player.fallState);
             return;
         }
 
-        if (player.isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if ((player.coyoteTimeCounter > 0f && Input.GetKeyDown(KeyCode.Space)) ||
+            (player.isGrounded && player.jumpBufferCounter > 0f))
         {
             stateMachine.ChangeState(player.jumpState);
+            player.jumpBufferCounter = 0f; // reseta buffer
             return;
         }
 
@@ -38,6 +39,10 @@ public class IdleState : PlayerState
 
     public override void PhysicsUpdate()
     {
-        player.rb.velocity = new Vector2(0, player.rb.velocity.y);
+        float targetSpeed = 0f;
+        float deceleration = player.deceleration; // defina no Player
+        float newX = Mathf.MoveTowards(player.rb.velocity.x, targetSpeed, deceleration * Time.fixedDeltaTime);
+
+        player.rb.velocity = new Vector2(newX, player.rb.velocity.y);
     }
 }
