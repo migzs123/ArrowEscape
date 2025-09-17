@@ -9864,11 +9864,11 @@ PrefabInstance:
       objectReference: {fileID: 924947592}
     - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
       propertyPath: accel
-      value: 90
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
       propertyPath: decel
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
       propertyPath: hearts

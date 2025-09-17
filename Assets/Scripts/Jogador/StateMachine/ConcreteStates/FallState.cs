@@ -6,33 +6,38 @@ public class FallState : PlayerState
 
     public override void FrameUpdate()
     {
+        FlipPlayer();
         if (player.isGrounded)
         {
-            if (HandleInput().Equals(0))
+            // Verifica se deve ir para Idle ou Move
+            if (Mathf.Abs(HandleInput()) < 0.05f)
                 stateMachine.ChangeState(player.idleState);
             else
                 stateMachine.ChangeState(player.moveState);
+            return;
         }
     }
 
     public override void PhysicsUpdate()
     {
-        if (HandleInput() != 0) this.FlipPlayer();
+        float moveInput = HandleInput();
 
-        float maxSpeed = player.moveSpeed;
-        float targetX = HandleInput() * maxSpeed;
+        // Controle aéreo com aceleração própria
+        float targetSpeed = moveInput * player.moveSpeed;
+        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? player.airAccel : player.airDecel;
+        float newX = Mathf.MoveTowards(player.rb.velocity.x, targetSpeed, accelRate * Time.fixedDeltaTime);
 
-        // Controle no ar pode ser reduzido em relação ao chão
-        float airControl = 0.7f;
-        float newVelX = Mathf.Lerp(player.rb.velocity.x, targetX, Time.fixedDeltaTime * (10f * airControl));
+        player.rb.velocity = new Vector2(newX, player.rb.velocity.y);
 
-        player.rb.velocity = new Vector2(newVelX, player.rb.velocity.y);
-
-        // Fall multiplier = acelera a queda
-        if (player.rb.velocity.y < 0f)
+        if (player.rb.velocity.y < 0f) // caindo
         {
             float fallMultiplier = player.fallMult; // ex: 2.5f
             player.rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1f) * Time.fixedDeltaTime;
+        }
+        else if (player.rb.velocity.y > 0f && !Input.GetKey(KeyCode.Space)) // pulo "curto"
+        {
+            float lowJumpMultiplier = player.lowJumpMult; // ex: 2f
+            player.rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1f) * Time.fixedDeltaTime;
         }
     }
 }

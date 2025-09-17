@@ -7,8 +7,8 @@ public class Player : MonoBehaviour, IDamagable
 {
     #region Health Variables
     [Header("Health Variables")]
-    [field: SerializeField] public float maxHealth;
-    [field: SerializeField] public HeartUI hearts;
+    public float maxHealth;
+    public HeartUI hearts;
     [HideInInspector] public float currHealth { get; set; }
 
     #endregion
@@ -30,20 +30,20 @@ public class Player : MonoBehaviour, IDamagable
 
     #region IdleState Variables
     [Header("Idle State")]
-    [field: SerializeField] public float deceleration;
+    public float deceleration;
     #endregion
 
     #region MoveState Variables
     [Header("Move State")]
-    [field: SerializeField] public float moveSpeed =7f;
-    [field: SerializeField] public float accel = 60f;
-    [field: SerializeField] public float decel = 70f;
+    public float moveSpeed =7f;
+    public float accel = 30f;
+    public float decel = 50f;
     #endregion
 
     #region JumpState Variables
     [Header("Jump State")]
-    [field: SerializeField] public float jumpPower;
-    [field: SerializeField] public float lowJumpMult;
+    public float jumpPower;
+    public float lowJumpMult;
     public float coyoteTime = 0.1f;
     [HideInInspector] public float coyoteTimeCounter;
     public float jumpBufferTime = 0.1f;
@@ -52,7 +52,9 @@ public class Player : MonoBehaviour, IDamagable
 
     #region FallState Variables
     [Header("Fall State")]
-    [field: SerializeField] public float fallMult;
+    public float fallMult;
+    public float airAccel = 8f;
+    public float airDecel = 6f;
     #endregion
 
     void Awake()
