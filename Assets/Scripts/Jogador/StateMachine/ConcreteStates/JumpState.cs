@@ -8,7 +8,7 @@ public class JumpState : PlayerState
     {
         player.animator.SetTrigger("Jump");
 
-        // Zera o Y para não acumular força
+        // Zera Y para resetar impulso
         player.rb.velocity = new Vector2(player.rb.velocity.x, 0f);
 
         // Impulso inicial
@@ -17,29 +17,29 @@ public class JumpState : PlayerState
 
     public override void FrameUpdate()
     {
-        // Se começou a cair -> muda para FallState
         if (player.rb.velocity.y < 0f)
         {
             stateMachine.ChangeState(player.fallState);
             return;
         }
-
-        // Pulo variável: corta altura se soltar o botão cedo
-        if (player.rb.velocity.y > 0 && !Input.GetButton("Jump"))
-        {
-            float cutMultiplier = player.lowJumpMult; // ex: 2f
-            player.rb.velocity += Vector2.up * Physics2D.gravity.y * (cutMultiplier - 1f) * Time.deltaTime;
-        }
     }
 
     public override void PhysicsUpdate()
     {
-        if (HandleInput() != 0) this.FlipPlayer();
+        float moveInput = HandleInput();
+        this.FlipPlayer();
 
-        float maxSpeed = player.moveSpeed;
-        float targetX = HandleInput() * maxSpeed;
-        float newVelX = Mathf.Lerp(player.rb.velocity.x, targetX, Time.fixedDeltaTime * 10f);
+        // --- Controle horizontal no ar ---
+        float targetX = moveInput * player.moveSpeed;
+        float accelRate = player.airAccel; // definir no Player
+        float newX = Mathf.MoveTowards(player.rb.velocity.x, targetX, accelRate * Time.fixedDeltaTime);
+        player.rb.velocity = new Vector2(newX, player.rb.velocity.y);
 
-        player.rb.velocity = new Vector2(newVelX, player.rb.velocity.y);
+        // --- Pulo variável (low jump) ---
+        if (player.rb.velocity.y > 0f && !Input.GetButton("Jump"))
+        {
+            float lowJumpMultiplier = player.lowJumpMult; // ex: 2f
+            player.rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1f) * Time.fixedDeltaTime;
+        }
     }
 }
