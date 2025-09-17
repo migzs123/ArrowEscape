@@ -9863,6 +9863,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 924947592}
     - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
+      propertyPath: accel
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
+      propertyPath: decel
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625337176166758936, guid: cf1ecc4e57ba07941a3c5a615a17446b, type: 3}
       propertyPath: hearts
       value: 
       objectReference: {fileID: 1693536143}

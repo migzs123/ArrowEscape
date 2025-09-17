@@ -35,7 +35,9 @@ public class Player : MonoBehaviour, IDamagable
 
     #region MoveState Variables
     [Header("Move State")]
-    [field: SerializeField] public float moveSpeed;
+    [field: SerializeField] public float moveSpeed =7f;
+    [field: SerializeField] public float accel = 60f;
+    [field: SerializeField] public float decel = 70f;
     #endregion
 
     #region JumpState Variables

@@ -22,11 +22,18 @@ public class PlayerState
 
     public virtual float HandleInput()
     {
-        return Input.GetAxisRaw("Horizontal");
+        float raw = Input.GetAxisRaw("Horizontal");
+        if (Mathf.Abs(raw) < 0.01f)
+            return 0f;
+        return Mathf.Sign(raw);
     }
 
     public virtual void FlipPlayer()
     {
-        player.transform.localScale = new Vector2(HandleInput() > 0 ? Mathf.Abs(player.transform.localScale.x) : -Mathf.Abs(player.transform.localScale.x), player.transform.localScale.y);
+        float input = HandleInput();
+        if (input > 0)
+            player.transform.localScale = new Vector2(Mathf.Abs(player.transform.localScale.x), player.transform.localScale.y);
+        else if (input < 0)
+            player.transform.localScale = new Vector2(-Mathf.Abs(player.transform.localScale.x), player.transform.localScale.y);
     }
 }
