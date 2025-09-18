@@ -187,15 +187,23 @@ public class Player : MonoBehaviour, IDamagable
 
     private void Update()
     {
+        Debug.Log(isGrounded);
+
+        // Coyote Time
         if (isGrounded)
             coyoteTimeCounter = coyoteTime;
         else
             coyoteTimeCounter -= Time.deltaTime;
 
+        // Buffer de pulo - GERENCIADO APENAS AQUI
         if (Input.GetKeyDown(KeyCode.Space))
+        {
             jumpBufferCounter = jumpBufferTime;
+        }
         else
+        {
             jumpBufferCounter -= Time.deltaTime;
+        }
 
         stateMachine.FrameUpdate();
     }

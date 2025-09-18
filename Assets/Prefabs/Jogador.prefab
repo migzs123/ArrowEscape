@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2219272965905042004}
   - component: {fileID: 7514753552974163121}
   - component: {fileID: 3675048743520779828}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: GroundCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4608
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 1527
@@ -297,15 +297,15 @@ MonoBehaviour:
   decel: 150
   jumpPower: 16
   lowJumpMult: 3
-  coyoteTime: 0.1
+  coyoteTime: 0.2
   coyoteTimeCounter: 0
-  jumpBufferTime: 0.1
+  jumpBufferTime: 0.4
   jumpBufferCounter: 0
   fallMult: 2.5
   airAccel: 12
   airDecel: 10
   knockbackForce: 20
-  knockbackDuration: 0.2
+  knockbackDuration: 0.4
 --- !u!1 &7867828080397175689
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 732529597618750113}
   - component: {fileID: 3062707837767380714}
   - component: {fileID: 2830400559566766293}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: DamageCollider
   m_TagString: Player
   m_Icon: {fileID: 0}

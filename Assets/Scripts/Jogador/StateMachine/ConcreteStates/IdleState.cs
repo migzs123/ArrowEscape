@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
 public class IdleState : PlayerState
 {
     public IdleState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
-    {}
+    { }
 
     public override void Enter()
     {
@@ -21,15 +20,13 @@ public class IdleState : PlayerState
             return;
         }
 
-        if ((player.coyoteTimeCounter > 0f && Input.GetKeyDown(KeyCode.Space)) ||
-            (player.isGrounded && player.jumpBufferCounter > 0f))
+        if (player.jumpBufferCounter > 0f && player.coyoteTimeCounter > 0f)
         {
             stateMachine.ChangeState(player.jumpState);
-            player.jumpBufferCounter = 0f; // reseta buffer
+            player.jumpBufferCounter = 0f; // Reseta apenas quando executa
             return;
         }
 
-        // Se tem input horizontal → Move
         if (HandleInput() != 0)
         {
             stateMachine.ChangeState(player.moveState);

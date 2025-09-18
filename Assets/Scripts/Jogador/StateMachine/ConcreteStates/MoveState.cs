@@ -15,21 +15,22 @@ public class MoveState : PlayerState
     public override void FrameUpdate()
     {
         FlipPlayer();
+
         if (!player.isGrounded)
         {
             stateMachine.ChangeState(player.fallState);
             return;
         }
 
-        if ((player.coyoteTimeCounter > 0f && Input.GetKeyDown(KeyCode.Space)) ||
-            (player.isGrounded && player.jumpBufferCounter > 0f))
+        // VERIFICAÇÃO SIMPLES DO PULO - DEIXE O BUFFER NO PLAYER
+        if (player.jumpBufferCounter > 0f && player.coyoteTimeCounter > 0f)
         {
             stateMachine.ChangeState(player.jumpState);
-            player.jumpBufferCounter = 0f;
             return;
         }
 
-        if (Mathf.Abs(player.rb.velocity.x) < 0.05f && HandleInput() == 0)
+        // Transição para Idle
+        if (HandleInput() == 0)
         {
             stateMachine.ChangeState(player.idleState);
             return;
