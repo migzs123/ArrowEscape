@@ -39,10 +39,6 @@ public class IdleState : PlayerState
 
     public override void PhysicsUpdate()
     {
-        float targetSpeed = 0f;
-        float deceleration = player.deceleration; // defina no Player
-        float newX = Mathf.MoveTowards(player.rb.velocity.x, targetSpeed, deceleration * Time.fixedDeltaTime);
-
-        player.rb.velocity = new Vector2(newX, player.rb.velocity.y);
+        player.rb.velocity = new Vector2(0f, player.rb.velocity.y);
     }
 }

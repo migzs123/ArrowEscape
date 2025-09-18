@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2219272965905042004}
   - component: {fileID: 7514753552974163121}
   - component: {fileID: 3675048743520779828}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GroundCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,8 +78,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01890127, y: -0.6978229}
-  m_Size: {x: 0.7646219, y: 0.7646219}
+  m_Offset: {x: 0.012710571, y: -0.6978229}
+  m_Size: {x: 1.1650696, y: 1.1650696}
   m_Direction: 0
 --- !u!114 &3675048743520779828
 MonoBehaviour:
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 4732658941730137584}
   - component: {fileID: 3125178123577782046}
   - component: {fileID: 2625337176166758936}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Jogador
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -304,6 +304,8 @@ MonoBehaviour:
   fallMult: 2.5
   airAccel: 12
   airDecel: 10
+  knockbackForce: 20
+  knockbackDuration: 0.2
 --- !u!1 &7867828080397175689
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,9 +317,9 @@ GameObject:
   - component: {fileID: 732529597618750113}
   - component: {fileID: 3062707837767380714}
   - component: {fileID: 2830400559566766293}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DamageCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

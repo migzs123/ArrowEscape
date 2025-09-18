@@ -21,11 +21,11 @@ public class FallState : PlayerState
     public override void PhysicsUpdate()
     {
         float moveInput = HandleInput();
+        float airControlFactor = 1f;
 
-        // Controle aéreo com aceleração própria
-        float targetSpeed = moveInput * player.moveSpeed;
+        float targetSpeed = moveInput * player.moveSpeed * airControlFactor;
         float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? player.airAccel : player.airDecel;
-        float newX = Mathf.MoveTowards(player.rb.velocity.x, targetSpeed, accelRate * Time.fixedDeltaTime);
+        float newX = Mathf.Lerp(player.rb.velocity.x, targetSpeed, accelRate * Time.fixedDeltaTime);
 
         player.rb.velocity = new Vector2(newX, player.rb.velocity.y);
 

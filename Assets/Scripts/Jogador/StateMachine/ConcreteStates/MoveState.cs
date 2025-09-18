@@ -38,12 +38,11 @@ public class MoveState : PlayerState
 
     public override void PhysicsUpdate()
     {
-        
         float moveInput = HandleInput();
         float targetSpeed = moveInput * player.moveSpeed;
 
-        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? player.accel : player.decel;
-        float newX = Mathf.MoveTowards(player.rb.velocity.x, targetSpeed, accelRate * Time.fixedDeltaTime);
+        // Use Lerp para resposta mais rápida que MoveTowards
+        float newX = Mathf.Lerp(player.rb.velocity.x, targetSpeed, player.accel * Time.fixedDeltaTime);
 
         player.rb.velocity = new Vector2(newX, player.rb.velocity.y);
     }

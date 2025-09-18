@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9ac412d7373002a4d8c74be1dcdd6e9b
+guid: 387a170bf79c7e848aec5b65659acf71
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spike_B_0
+      name: Jumper_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 24
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 254deade2eb8a9f41bfa3c59fc293d32
-      internalID: -1515833206
+      spriteID: 94c35e34858943144a5ed7b66a06b5ee
+      internalID: -1097166865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_B_1
+      name: Jumper_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 24
         y: 0
-        width: 32
-        height: 32
+        width: 24
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 052048e2fd870974f8f2578deaffdf63
-      internalID: 210702002
+      spriteID: 957eae528bef3594691e024fe25cf9b4
+      internalID: 131406829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_B_2
+      name: Jumper_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 0
-        width: 32
-        height: 32
+        width: 24
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a49747bfcdfd4fc468d6dbf9f9b57495
-      internalID: -1867438945
+      spriteID: df5b05cdb97d55c468d3e8ff909c0431
+      internalID: -1233893211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_B_3
+      name: Jumper_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c039de059603d54597d53a526dd0351
+      internalID: 740175025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jumper_4
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
-        height: 32
+        width: 24
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 033e87b07551cf34e94a5e2778b0fca6
-      internalID: -1703449434
+      spriteID: bd13895a30a8a1b4983d4ad0123906b9
+      internalID: -478298240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_B_4
+      name: Jumper_5
       rect:
         serializedVersion: 2
-        x: 128
+        x: 120
         y: 0
-        width: 32
-        height: 32
+        width: 24
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bb385283d4dcd34db57f0c1f5802bff
-      internalID: 771255274
+      spriteID: 54e53cb0aa8ac0b4dab051ef60c48d03
+      internalID: -579500388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_B_5
+      name: Jumper_6
       rect:
         serializedVersion: 2
-        x: 160
+        x: 144
         y: 0
-        width: 32
-        height: 32
+        width: 24
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44c32d15ab66a7947a666ee06e930813
-      internalID: 354479611
+      spriteID: 1da5a4290db027e4cb2b28264dd18c1c
+      internalID: 1772022277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spike_B_6
+      name: Jumper_7
       rect:
         serializedVersion: 2
-        x: 192
+        x: 168
         y: 0
-        width: 32
-        height: 32
+        width: 24
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,71 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b686a7763e626954e9318c530cb0e9d0
-      internalID: -405780774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spike_B_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4cd3109251c2dc498e920884c86fed4
-      internalID: -569013513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spike_B_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15d836e18acd5124bb13608356676327
-      internalID: 1484681575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spike_B_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8875152bc0246ec41a9121c9ee58da64
-      internalID: 495959775
+      spriteID: 160ac52cbb4b8a64a8f1039410aaf9d2
+      internalID: 1100095045
       vertices: []
       indices: 
       edges: []
@@ -330,16 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spike_B_0: -1515833206
-      Spike_B_1: 210702002
-      Spike_B_2: -1867438945
-      Spike_B_3: -1703449434
-      Spike_B_4: 771255274
-      Spike_B_5: 354479611
-      Spike_B_6: -405780774
-      Spike_B_7: -569013513
-      Spike_B_8: 1484681575
-      Spike_B_9: 495959775
+      Jumper_0: -1097166865
+      Jumper_1: 131406829
+      Jumper_2: -1233893211
+      Jumper_3: 740175025
+      Jumper_4: -478298240
+      Jumper_5: -579500388
+      Jumper_6: 1772022277
+      Jumper_7: 1100095045
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

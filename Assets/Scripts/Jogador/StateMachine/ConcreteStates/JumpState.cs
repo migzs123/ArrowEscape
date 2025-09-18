@@ -29,10 +29,9 @@ public class JumpState : PlayerState
         float moveInput = HandleInput();
         this.FlipPlayer();
 
-        // --- Controle horizontal no ar ---
-        float targetX = moveInput * player.moveSpeed;
-        float accelRate = player.airAccel; // definir no Player
-        float newX = Mathf.MoveTowards(player.rb.velocity.x, targetX, accelRate * Time.fixedDeltaTime);
+        float airControlFactor = 1f;
+        float targetX = moveInput * player.moveSpeed * airControlFactor;
+        float newX = Mathf.Lerp(player.rb.velocity.x, targetX, player.airAccel * Time.fixedDeltaTime);
         player.rb.velocity = new Vector2(newX, player.rb.velocity.y);
 
         // --- Pulo variável (low jump) ---

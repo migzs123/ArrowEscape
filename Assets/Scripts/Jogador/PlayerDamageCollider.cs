@@ -21,13 +21,13 @@ public class PlayerDamageCollider : MonoBehaviour
         {
             collision.enabled = false;
 
-            player.Damage(1);
+            player.TakeDamage(1);
             Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Potion"))
         {
             Debug.Log("Pegou");
-            player.Cure(2);
+            player.Cure(4);
             Destroy(collision.gameObject);
         }
     }

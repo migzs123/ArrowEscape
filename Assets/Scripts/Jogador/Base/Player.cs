@@ -14,7 +14,7 @@ public class Player : MonoBehaviour, IDamagable
     #endregion
 
     #region State Machine Variables
-    private PlayerStateMachine stateMachine { get; set; }
+    public PlayerStateMachine stateMachine { get; set; }
     [HideInInspector] public IdleState idleState { get; set; }
     [HideInInspector] public MoveState moveState { get; set; }
     [HideInInspector] public FallState fallState { get; set; }
@@ -57,6 +57,13 @@ public class Player : MonoBehaviour, IDamagable
     public float airDecel = 6f;
     #endregion
 
+    #region Knockback
+    [Header("Knockback")]
+    public float knockbackForce = 10f;  // força do impulso
+    public float knockbackDuration = 0.2f; // duração do knockback
+    private bool isKnockback = false;
+    #endregion
+
     void Awake()
     {
         stateMachine = new PlayerStateMachine();
@@ -97,7 +104,7 @@ public class Player : MonoBehaviour, IDamagable
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void Damage(int damage)
+    public void TakeDamage(int damage)
     {
         if(currHealth-damage <= 0)
         {
@@ -110,6 +117,42 @@ public class Player : MonoBehaviour, IDamagable
        hearts.UpdateHearts();
        animator.SetTrigger("Damage");
     }
+
+    public void TakeDamageKnockback(int damage, Vector2 attackDirection)
+    {
+        if (currHealth - damage <= 0)
+        {
+            currHealth = 0;
+            Die();
+            return;
+        }
+
+        currHealth -= damage;
+        hearts.UpdateHearts();
+        animator.SetTrigger("Damage");
+
+        // aplica knockback
+        if (!isKnockback)
+            StartCoroutine(Knockback(attackDirection));
+    }
+
+    private IEnumerator Knockback(Vector2 direction)
+    {
+        isKnockback = true;
+
+        float timer = 0f;
+
+        // aplica impulso
+        while (timer < knockbackDuration)
+        {
+            rb.velocity = direction.normalized * knockbackForce;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        isKnockback = false;
+    }
+
 
     public void Cure(int amount)
     {
