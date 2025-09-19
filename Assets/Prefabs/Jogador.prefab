@@ -257,7 +257,7 @@ MonoBehaviour:
   coyoteTimeCounter: 0
   jumpBufferTime: 0.4
   jumpBufferCounter: 0
-  fallMult: 2.5
+  fallMult: 3
   airAccel: 12
   airDecel: 10
   knockbackForce: 20
@@ -327,7 +327,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.096597195, y: -0.34872228}
+  m_Offset: {x: 0.096597195, y: -0.45305592}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -338,7 +338,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.2}
+  m_Size: {x: 1.2, y: 1.4086672}
   m_EdgeRadius: 0
 --- !u!114 &2830400559566766293
 MonoBehaviour:
