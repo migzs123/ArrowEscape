@@ -22,12 +22,9 @@ public class HeartUI : MonoBehaviour
 
     public void DrawHearts()
     {
-        Transform initialPositon = heartUI.transform;
-
         for (int i = 0; i < playerScript.maxHealth; i++)
         {
-            Vector3 position = new Vector3(initialPositon.position.x + (i * 50), initialPositon.position.y, 0);
-            GameObject newHeart = Instantiate(HeartPrefab, position, transform.rotation, heartUI.transform);
+            GameObject newHeart = Instantiate(HeartPrefab, heartUI.transform);
             hearts.Add(newHeart);
         }
     }
