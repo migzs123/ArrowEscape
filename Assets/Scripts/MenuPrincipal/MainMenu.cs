@@ -12,6 +12,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Fase1");
     }
 
+    public void Return() {
+        SceneManager.LoadScene(0);
+    }
+
     // Update is called once per frame
     public void QuitGame()
     {
