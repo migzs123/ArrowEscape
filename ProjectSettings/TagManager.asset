@@ -5,8 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plataforma
-  - Controlador
-  - Penhasco
+  - Thropy
+  - Spikes
+  - Arrow
+  - Confiner
+  - Potion
+  - Scene
+  - FalseGround
+  - Jumper
   layers:
   - Default
   - TransparentFX
@@ -17,10 +23,10 @@ TagManager:
   - Chao
   - Jogador
   - Flecha
-  - 
-  - 
-  - 
-  - 
+  - Scene
+  - Trap
+  - Player
+  - Platform
   - 
   - 
   - 
